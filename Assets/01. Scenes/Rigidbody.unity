@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 1258100267}
   - component: {fileID: 1258100266}
   - component: {fileID: 1258100270}
+  - component: {fileID: 1258100271}
   m_Layer: 0
   m_Name: Blue Ball
   m_TagString: Untagged
@@ -404,7 +405,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258100265}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a37be82e3c0f9340ada57db874c5923, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -513,6 +514,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1258100271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258100265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca77279ed7213944daf27b844620389f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1315719136
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +539,7 @@ GameObject:
   - component: {fileID: 1315719138}
   - component: {fileID: 1315719137}
   - component: {fileID: 1315719141}
+  - component: {fileID: 1315719142}
   m_Layer: 0
   m_Name: Red Ball
   m_TagString: Untagged
@@ -540,7 +554,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315719136}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a37be82e3c0f9340ada57db874c5923, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -649,6 +663,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1315719142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315719136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca77279ed7213944daf27b844620389f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1952050457
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +701,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952050457}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a37be82e3c0f9340ada57db874c5923, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

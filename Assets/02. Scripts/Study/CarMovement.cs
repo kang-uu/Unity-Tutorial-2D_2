@@ -3,10 +3,8 @@ using UnityEngine;
 
 public class CarMovement : MonoBehaviour
 {
-    public float moveSpeed = 3f;
-
     public Rigidbody2D carRb;
-
+    public float moveSpeed = 3f;
     private float h;
     
     void Update()
@@ -16,7 +14,37 @@ public class CarMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Rigidbody의 속도를 활용한 이동
-        carRb.linearVelocityX = h * moveSpeed * Time.deltaTime;
+        carRb.linearVelocityX = h * moveSpeed;
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Collision Enter");
+    }
+    
+    void OnCollisionStay2D(Collision2D other)
+    {
+        Debug.Log("Collision Stay");
+    }
+    
+    void OnCollisionExit2D(Collision2D other)
+    {
+        Debug.Log("Collision Exit");
+    }
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Trigger Enter");
+    }
+    
+    void OnTriggerStay2D(Collider2D other)
+    {
+        Debug.Log("Trigger Stay");
+    }
+    
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Debug.Log("Trigger Exit");
+    }
+    
 }
