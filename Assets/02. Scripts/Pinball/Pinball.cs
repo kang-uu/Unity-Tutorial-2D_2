@@ -21,7 +21,7 @@ public class Pinball : MonoBehaviour
                 break;
         }
 
-        if (score > 0)
+        if (score != 0)
         {
             pinballManager.totalScore += score;
 
