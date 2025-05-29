@@ -16,10 +16,10 @@ public class CatController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             catRb.AddForceY(jumpPower, ForceMode2D.Impulse);
-            jumpCount++; // 1씩 증가
+            // jumpCount++; // 1씩 증가
         }
     }
 
