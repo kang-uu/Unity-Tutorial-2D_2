@@ -1,8 +1,11 @@
 using System;
 using UnityEngine;
+using Cat; // 사운드 매니저가 있는 namespace
 
 public class CatController : MonoBehaviour
 {
+    public SoundManager soundManager; // public으로 설정했기 때문에 유니티 상에서 할당 예정
+    
     private Rigidbody2D catRb;
     private Animator catAnim;
     
@@ -25,6 +28,8 @@ public class CatController : MonoBehaviour
             catAnim.SetBool("isGround", false);
             catRb.AddForceY(jumpPower, ForceMode2D.Impulse);
             jumpCount++; // 1씩 증가
+
+            soundManager.OnJumpSound();
         }
     }
 
