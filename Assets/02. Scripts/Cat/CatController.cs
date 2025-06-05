@@ -9,8 +9,8 @@ public class CatController : MonoBehaviour
     private Rigidbody2D catRb;
     private Animator catAnim;
     
-    public float jumpPower = 10f;
-    public float limitPower = 7f;
+    public float jumpPower = 30f;
+    public float limitPower = 25f;
     
     public bool isGround = false;
     
