@@ -9,13 +9,12 @@ public class CatController : MonoBehaviour
     private Rigidbody2D catRb;
     private Animator catAnim;
     
+    public int jumpCount = 0;
     public float jumpPower = 30f;
     public float limitPower = 25f;
     
     public bool isGround = false;
     
-    public int jumpCount = 0;
-
     void Start()
     {
         catRb = GetComponent<Rigidbody2D>();
@@ -39,7 +38,6 @@ public class CatController : MonoBehaviour
         var catRotation = transform.eulerAngles;
         catRotation.z = catRb.linearVelocityY * 2.5f;
         transform.eulerAngles = catRotation;
-        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
