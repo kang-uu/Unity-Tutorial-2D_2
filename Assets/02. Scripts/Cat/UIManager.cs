@@ -6,8 +6,11 @@ namespace Cat
 {
     public class UIManager : MonoBehaviour
     {
+        public SoundManager soundManager;
+        
         public GameObject playObj;
         public GameObject introUI;
+        public GameObject playUI;
         
         public TMP_InputField inputField;
         public TextMeshProUGUI nameTextUI;
@@ -24,16 +27,18 @@ namespace Cat
             bool isNoText = inputField.text == "";
 
             if (isNoText)
-            {
                 Debug.Log("입력한 텍스트 없음");
-            }
             else
             {
+                nameTextUI.text = inputField.text;
+                soundManager.SetBGMSound("Play");
+                
+                GameManager.isPlay = true;
+                
                 playObj.SetActive(true);
+                playUI.SetActive(true);
                 introUI.SetActive(false);
                 
-                Debug.Log($"{nameTextUI.text} 입력");
-                nameTextUI.text = inputField.text;
             }
         }
     }

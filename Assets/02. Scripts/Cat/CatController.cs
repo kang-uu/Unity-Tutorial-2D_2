@@ -23,7 +23,7 @@ public class CatController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 5)
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 10)
         {
             catAnim.SetTrigger("Jump");
             catAnim.SetBool("isGround", false);
