@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
-using Cat; // 사운드 매니저가 있는 namespace
+using Cat;
 
 public class CatController : MonoBehaviour
 {
-    public SoundManager soundManager; // public으로 설정했기 때문에 유니티 상에서 할당 예정
+    public SoundManager soundManager;
     
     private Rigidbody2D catRb;
     private Animator catAnim;
@@ -38,6 +38,17 @@ public class CatController : MonoBehaviour
         var catRotation = transform.eulerAngles;
         catRotation.z = catRb.linearVelocityY * 2.5f;
         transform.eulerAngles = catRotation;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Apple"))
+        {
+            other.gameObject.SetActive(false);
+            other.transform.parent.GetComponent<ItemEvent>().particle.SetActive(true);
+            
+            GameManager.score++;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
