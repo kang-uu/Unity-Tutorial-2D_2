@@ -58,7 +58,6 @@ public class CatController : MonoBehaviour
                 fadeUI.SetActive(true);
                 fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.white);
                 this.GetComponent<CircleCollider2D>().enabled = false;
-
                 Invoke("HappyVideo", 5f);
             }
         }
@@ -74,7 +73,6 @@ public class CatController : MonoBehaviour
             fadeUI.SetActive(true); // 페이드 켜기
             fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.black); // 페이드 실행
             this.GetComponent<CircleCollider2D>().enabled = false;
-            
             Invoke("SadVideo", 5f);
         }
         
@@ -90,7 +88,6 @@ public class CatController : MonoBehaviour
         happyVideo.SetActive(true);
         fadeUI.SetActive(false);
         gameOverUI.SetActive(false);
-
         soundManager.audioSource.mute = true;
     }
     
@@ -99,7 +96,6 @@ public class CatController : MonoBehaviour
         sadVideo.SetActive(true);
         fadeUI.SetActive(false);
         gameOverUI.SetActive(false);
-
         soundManager.audioSource.mute = true;
     }
     

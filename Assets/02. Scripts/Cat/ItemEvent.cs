@@ -21,9 +21,11 @@ public class ItemEvent : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-        
+
         if (transform.position.x <= -returnPosX)
+        {
             SetRandomSetting(returnPosX);
+        }
     }
 
     private void SetRandomSetting(float posX)
