@@ -68,10 +68,9 @@ public class CatController : MonoBehaviour
             if (GameManager.score == 10) // 사과를 10개 먹어서 성공
             {
                 fadeUI.SetActive(true);
-                fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.white);
+                fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.white, true);
                 GetComponent<CircleCollider2D>().enabled = false;
                 
-                Debug.Log("사과 10개 먹어서 성공 이벤트");
                 StartCoroutine(EndingRoutine(true));
             }
         }
@@ -85,10 +84,9 @@ public class CatController : MonoBehaviour
 
             gameOverUI.SetActive(true); // 게임 오버 켜기
             fadeUI.SetActive(true); // 페이드 켜기
-            fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.black); // 페이드 실행
+            fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.black, true); // 페이드 실행
             GetComponent<CircleCollider2D>().enabled = false;
             
-            Debug.Log("파이프 충돌 이벤트");
             StartCoroutine(EndingRoutine(false));
         }
         
@@ -102,14 +100,18 @@ public class CatController : MonoBehaviour
     IEnumerator EndingRoutine(bool isHappy)
     {
         yield return new WaitForSeconds(3.5f);
-        transform.parent.gameObject.SetActive(false); // PLAY 오브젝트 Off
         
-        videoManager.VideoPlay(isHappy);
+        videoManager.VideoPlay(isHappy); // 영상 재생 시작
+        yield return new WaitForSeconds(1f);
+
+        var newColor = isHappy ? Color.white : Color.black;
+        fadeUI.GetComponent<FadeRoutine>().OnFade(3f, newColor, false); // 페이드 실행
         
+        yield return new WaitForSeconds(3f);
         fadeUI.SetActive(false);
         gameOverUI.SetActive(false);
         soundManager.audioSource.Stop();
         
-        Debug.Log("영상 재생 완료");
+        transform.parent.gameObject.SetActive(false); // PLAY 오브젝트 Off
     }
 }

@@ -23,6 +23,8 @@ namespace Cat
 
             vPlayer.clip = endingClip;
             vPlayer.Play();
+
+            Debug.Log("영상 시작 완료");
         }
     }
 }

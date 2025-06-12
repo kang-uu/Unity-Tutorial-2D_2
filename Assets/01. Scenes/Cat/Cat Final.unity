@@ -277,6 +277,7 @@ MonoBehaviour:
   playObj: {fileID: 2064406243}
   introUI: {fileID: 737256670}
   playUI: {fileID: 768960067}
+  videoPanel: {fileID: 1039054443}
   inputField: {fileID: 1245090875}
   nameTextUI: {fileID: 1956974220}
   startButton: {fileID: 652781534}
@@ -1849,7 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2864,8 +2865,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1446234028}
-  - {fileID: 505347171}
   - {fileID: 1039054444}
+  - {fileID: 505347171}
   m_Father: {fileID: 387807593}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6837,7 +6838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2064406244
 Transform:
   m_ObjectHideFlags: 0
