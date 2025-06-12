@@ -18,13 +18,26 @@ public class CatController : MonoBehaviour
     public float jumpPower = 30f;
     public float limitPower = 25f;
     
-    void Start()
+    void Awake() // 1번만 실행
     {
         catRb = GetComponent<Rigidbody2D>();
         catAnim = GetComponent<Animator>();
     }
+    
+    void OnEnable() // 켜질때마다 1번씩 실행
+    {
+        transform.localPosition = Vector3.zero; // 고양이 처음 위치
+        
+        GetComponent<CircleCollider2D>().enabled = true;
+        soundManager.audioSource.Play();
+    }
 
     void Update()
+    {
+        Jump();
+    }
+
+    private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 10)
         {
@@ -89,11 +102,14 @@ public class CatController : MonoBehaviour
     IEnumerator EndingRoutine(bool isHappy)
     {
         yield return new WaitForSeconds(3.5f);
+        transform.parent.gameObject.SetActive(false); // PLAY 오브젝트 Off
+        
         videoManager.VideoPlay(isHappy);
         
         fadeUI.SetActive(false);
         gameOverUI.SetActive(false);
-        soundManager.audioSource.mute = true;
+        soundManager.audioSource.Stop();
+        
         Debug.Log("영상 재생 완료");
     }
 }
