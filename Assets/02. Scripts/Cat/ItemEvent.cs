@@ -46,6 +46,9 @@ public class ItemEvent : MonoBehaviour
         
         colliderType = (ColliderType)Random.Range(0, 3);
         
+        colliderType = ColliderType.Pipe;
+        
+        
         switch (colliderType)
         {
             case ColliderType.Pipe:

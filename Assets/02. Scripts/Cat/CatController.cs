@@ -39,6 +39,8 @@ public class CatController : MonoBehaviour
 
     private void Jump()
     {
+        // if (Input.GetMouseButtonDown(0) && jumpCount < 10)
+        // if (Input.GetTouch(0).phase == TouchPhase.Began && jumpCount < 10)
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 10)
         {
             catAnim.SetTrigger("Jump");
