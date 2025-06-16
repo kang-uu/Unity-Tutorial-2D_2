@@ -5,6 +5,11 @@ public abstract class Monster : MonoBehaviour, IDamageable
     public float hp;
 
     public abstract void SetHealth();
+
+    void Start()
+    {
+        SetHealth();
+    }
     
     public void TakeDamage(float damage)
     {
@@ -17,6 +22,6 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
     public void Death()
     {
-        Debug.Log("몬스터 다운");
+        Debug.Log("몬스터 죽음");
     }
 }
