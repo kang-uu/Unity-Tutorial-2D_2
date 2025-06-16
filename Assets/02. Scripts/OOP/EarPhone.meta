@@ -1,3 +1,26 @@
+<<<<<<< Updated upstream
 ﻿fileFormatVersion: 2
 guid: 7a3aa5b50e8d4daeb9c46f2b264fdf6f
 timeCreated: 1750040164
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+fileFormatVersion: 2
+guid: 6ceba12249e276b408cc336cba88be10
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+=======
+﻿fileFormatVersion: 2
+guid: 7a3aa5b50e8d4daeb9c46f2b264fdf6f
+timeCreated: 1750040164
+>>>>>>> 23284bc4e9dbe30272a606d42cd2bef75a652015
+=======
+﻿fileFormatVersion: 2
+guid: 7a3aa5b50e8d4daeb9c46f2b264fdf6f
+timeCreated: 1750040164
+>>>>>>> 23284bc4e9dbe30272a606d42cd2bef75a652015
+>>>>>>> Stashed changes
