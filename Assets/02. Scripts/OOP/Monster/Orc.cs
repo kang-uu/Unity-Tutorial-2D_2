@@ -1,9 +1,6 @@
 using UnityEngine;
 
-public class Orc : Monster
+public class Orc : MonoBehaviour
 {
-    public override void SetHealth()
-    {
-        hp = 100f;
-    }
+    
 }
