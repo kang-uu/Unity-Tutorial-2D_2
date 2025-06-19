@@ -4,7 +4,7 @@ public class Skeleton : Monster
 {
     public override void Init()
     {
-        hp = 10f;
+        hp = 30f;
         moveSpeed = 1f;
     }
 }

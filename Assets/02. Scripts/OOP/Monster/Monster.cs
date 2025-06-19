@@ -1,35 +1,43 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public abstract class Monster : MonoBehaviour
 {
     private SpriteRenderer sRenderer;
+    private Animator animator;
 
     [SerializeField] protected float hp = 3f;
     [SerializeField] protected float moveSpeed = 3f;
 
-    public int dir = 1;
+    private int dir = 1;
+    private bool isMove = true;
+    private bool isHit = false;
 
     public abstract void Init();
 
-    private void Start()
+    void Start()
     {
         sRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
 
         Init();
     }
 
-    private void OnMouseDown()
+    void OnMouseDown()
     {
-        Hit(1);
+        StartCoroutine(Hit(1));
     }
 
-    private void Update()
+    void Update()
     {
         Move();
     }
 
     void Move()
     {
+        if (!isMove)
+            return;
+
         transform.position += Vector3.right * dir * moveSpeed * Time.deltaTime;
 
         if (transform.position.x > 8f)
@@ -44,14 +52,30 @@ public abstract class Monster : MonoBehaviour
         }
     }
 
-    void Hit(float damage)
+    IEnumerator Hit(float damage)
     {
+        if (isHit)
+            yield break;
+
+        isHit = true;
+        isMove = false;
+
         hp -= damage;
-        Debug.Log("공격함");
+
         if (hp <= 0)
         {
-            Debug.Log("몬스터 죽음");
+            animator.SetTrigger("Death");
+
+            yield return new WaitForSeconds(3f);
             Destroy(gameObject);
+
+            yield break;
         }
+
+        animator.SetTrigger("Hit");
+
+        yield return new WaitForSeconds(0.65f);
+        isHit = false;
+        isMove = true;
     }
 }
