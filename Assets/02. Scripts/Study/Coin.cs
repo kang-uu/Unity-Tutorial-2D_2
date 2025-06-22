@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class CoinOne : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
