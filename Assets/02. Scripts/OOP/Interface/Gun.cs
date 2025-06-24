@@ -1,10 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Gun : MonoBehaviour,IDropItem
+public class Gun : MonoBehaviour, IDropItem
 {
     public GameObject bulletPrefab;
     public Transform shootPos;
-
+    
     public void Grab(Transform grabPos)
     {
         transform.SetParent(grabPos);
@@ -14,9 +14,9 @@ public class Gun : MonoBehaviour,IDropItem
 
     public void Use()
     {
-        GameObject bullet = Instantiate(bulletPrefab,shootPos.position,Quaternion.identity);
-        Rigidbody bulletRb=bullet.GetComponent<Rigidbody>();
-
+        GameObject bullet = Instantiate(bulletPrefab, shootPos.position, Quaternion.identity);
+        Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+        
         bulletRb.AddForce(shootPos.forward * 100f, ForceMode.Impulse);
     }
 

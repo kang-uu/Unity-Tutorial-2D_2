@@ -3,23 +3,34 @@ using UnityEngine;
 
 public abstract class Monster : MonoBehaviour
 {
+    private SpawnManager spawner;
+    
     private SpriteRenderer sRenderer;
     private Animator animator;
-
-    [SerializeField] protected float hp = 3f;
-    [SerializeField] protected float moveSpeed = 3f;
+    
+    protected float hp = 3f;
+    protected float moveSpeed = 3f;
 
     private int dir = 1;
+    public int Dir
+    {
+        get { return dir; }
+        set { dir = value; }
+    }
+    
+    
     private bool isMove = true;
     private bool isHit = false;
-
+    
     public abstract void Init();
 
-    void Start()
+    void Awake()
     {
+        spawner = FindFirstObjectByType<SpawnManager>();
+        
         sRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-
+        
         Init();
     }
 
@@ -32,7 +43,7 @@ public abstract class Monster : MonoBehaviour
     {
         Move();
     }
-
+    
     void Move()
     {
         if (!isMove)
@@ -41,37 +52,43 @@ public abstract class Monster : MonoBehaviour
         transform.position += Vector3.right * dir * moveSpeed * Time.deltaTime;
 
         if (transform.position.x > 8f)
-        {
             dir = -1;
-            sRenderer.flipX = true;
-        }
         else if (transform.position.x < -8f)
-        {
             dir = 1;
-            sRenderer.flipX = false;
-        }
+        
+        SetFlip(dir);
     }
 
-    IEnumerator Hit(float damage)
+    public void SetFlip(int dir)
+    {
+        if (dir > 0)
+            sRenderer.flipX = false;
+        else
+            sRenderer.flipX = true;
+    }
+    
+    public IEnumerator Hit(float damage)
     {
         if (isHit)
             yield break;
-
+            
         isHit = true;
         isMove = false;
-
+        
         hp -= damage;
-
+        
         if (hp <= 0)
         {
             animator.SetTrigger("Death");
-
+            
+            spawner.DropCoin(transform.position); // 코인 생성
+            
             yield return new WaitForSeconds(3f);
             Destroy(gameObject);
-
+            
             yield break;
         }
-
+        
         animator.SetTrigger("Hit");
 
         yield return new WaitForSeconds(0.65f);
