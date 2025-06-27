@@ -21,17 +21,7 @@ public class KnightController_Joystick : MonoBehaviour
     {
         Move();
     }
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
-
-    }
-
-    void OnCollisionExit2D(Collision2D other)
-    {
-
-    }
-
+    
     public void InputJoystick(float x, float y)
     {
         inputDir = new Vector3(x, y, 0).normalized;
