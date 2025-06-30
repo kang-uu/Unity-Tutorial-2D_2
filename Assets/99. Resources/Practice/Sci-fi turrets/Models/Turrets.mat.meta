@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 50ba9298138390848a2acd58ad8c683b
+timeCreated: 1471308998
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 69615
+  packageName: Sci-fi turrets
+  packageVersion: 1.0
+  assetPath: Assets/Sci-fi turrets/Models/Turrets.mat
+  uploadId: 179398

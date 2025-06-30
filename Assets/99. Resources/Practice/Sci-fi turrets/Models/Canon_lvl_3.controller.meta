@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2112193da56ccbc4997c0d7a2e4e6015
+timeCreated: 1471358150
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 69615
+  packageName: Sci-fi turrets
+  packageVersion: 1.0
+  assetPath: Assets/Sci-fi turrets/Models/Canon_lvl_3.controller
+  uploadId: 179398

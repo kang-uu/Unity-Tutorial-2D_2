@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5b607486da80ca845a293722d1e28aff
+timeCreated: 1471358646
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 69615
+  packageName: Sci-fi turrets
+  packageVersion: 1.0
+  assetPath: Assets/Sci-fi turrets/Prefabs/Canon_lvl_1.prefab
+  uploadId: 179398
